@@ -1,0 +1,28 @@
+name: Deploy Anything via FTP
+
+on:
+  push:
+    branches:
+      - main  # Trigger deployment on push to main branch
+
+jobs:
+  web-deploy:
+    name: 🎉 Deployy
+    runs-on: ubuntu-latest  # Use the latest Ubuntu environment for consistency
+
+    steps:
+      # Step 1: Checkout latest code from GitHub repository
+      - name: 🚚 Get latest code
+        uses: actions/checkout@v4
+        # Clones the repository so the runner has the latest code
+
+      # Step 2: Upload files via FTP
+      - name: 📂 Sync files to FTP server
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5 # https://github.com/SamKirkland/FTP-Deploy-Action
+        with:
+          server: ${{ secrets.FTP_SERVER }}  # FTP server address (e.g., ftp.yourdomain.com)
+          username: ${{ secrets.FTP_USERNAME }}  # FTP login username
+          password: ${{ secrets.FTP_PASSWORD }}  # FTP login password
+          server-dir: ./htdocs/  # Destination directory on FTP server
+
+      # Optional: Add verification or notification steps here
