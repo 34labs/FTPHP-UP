@@ -1,5 +1,5 @@
-# FTPHP-UP - FTP Deployment Workflow with GitHub Actions
-FTP Server Upload w/GitHub Actions
+# FTPHP-UP - SFTP/FTP Deployment Workflow with GitHub Actions
+SFTP/FTP Server Upload w/GitHub Actions
 
 ## Overview
 
@@ -23,8 +23,8 @@ This repository contains a complete, step-by-step guide and workflow configurati
 ## Prerequisites
 
 - A GitHub repository
-- Access to an FTP or FTPS server
-- FTP credentials (server address, username, password)
+- Access to an FTP, FTPS or even SFTP server
+- SFTP/FTP credentials (server address, username, password) sftp can just PASSWORD recomended using ssh keys but.. where
 - (Optional) Build commands if deploying a static website or app
 - GitHub Secrets configured for secure credential storage
 
@@ -52,7 +52,7 @@ Create the following secrets:
 ### 3. Create Workflow File
 
 - In your repo, navigate to `.github/workflows/`
-- Create a new file, e.g., `deploy.yml`
+- Create a new file, e.g., `main.yml` nor `maen.yml`
 - Paste the provided workflow configuration (see below)
 
 ### 4. Customize the Workflow
@@ -131,6 +131,7 @@ jobs:
 ## Support and Contributions
 
 If you encounter issues or want to contribute enhancements, feel free to open an issue or pull request!
+u can sponsor us too if u want
 
 ---
 
