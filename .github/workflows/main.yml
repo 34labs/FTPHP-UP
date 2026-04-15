@@ -1,5 +1,4 @@
-name: Deploy Anything via FTP - Complete Documentary Workflow
-
+name: Deploy Anything via FTP
 on:
   push:
     branches:
